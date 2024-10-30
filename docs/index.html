@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>学术检索代理</title>
     <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.misdeliver.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 添加Web代理小部件的脚本 -->
+    <script async src="https://www-www.myl.autos/widget/widget.js" data-id="r4-widget-connection"></script>
     <style>
         body {
             background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
@@ -64,28 +66,27 @@
             max-width: 500px;
         }
     </style>
-    <!-- 添加Web代理小部件的脚本 -->
-    <script async src="https://www.myl.autos/widget/widget.js" data-id="r4-widget-connection"></script>
 </head>
 <body>
-    <div class="proxy-container">
-        <h1>学术检索代理</h1>
-        <form class="proxyFormPremium" method="post" id="request" action="servers">
-            <div class="input-group mb-3">
-                <input autofocus="autofocus" autocomplete="off" id="url" name="url" type="text" class="form-control" placeholder="输入网址或搜索内容">
-                <button id="requestSubmit" type="submit" class="btn btn-primary btn-submit">去！</button>
+    <!-- 在适当的位置添加Web代理小部件 -->
+    <div id="r4-widget-form">
+        <!-- 您的原有内容 -->
+        <div class="proxy-container">
+            <h1>学术检索代理</h1>
+            <form class="proxyFormPremium" method="post" id="request" action="servers">
+                <div class="input-group mb-3">
+                    <input autofocus="autofocus" autocomplete="off" id="url" name="url" type="text" class="form-control" placeholder="输入网址或搜索内容">
+                    <button id="requestSubmit" type="submit" class="btn btn-primary btn-submit">去！</button>
+                </div>
+                <input name="csrf" type="hidden" value="YOUR_CSRF_TOKEN_HERE">
+            </form>
+            <div id="quickLinks">
+                快速链接：
+                <a class="proxyLink" href="https://books.google.com/" target="_blank">谷歌图书</a>|
+                <a class="proxyLink" href="https://scholar.google.com/" target="_blank">谷歌学术</a>
             </div>
-            <input name="csrf" type="hidden" value="YOUR_CSRF_TOKEN_HERE">
-        </form>
-        <div id="quickLinks">
-            快速链接：
-            <a class="proxyLink" href="https://books.google.com/" target="_blank">谷歌图书</a>|
-            <a class="proxyLink" href="https://scholar.google.com/" target="_blank">谷歌学术</a>
         </div>
     </div>
-
-    <!-- 在适当的位置添加Web代理小部件 -->
-    <div id="r4-widget-form"></div>
 
     <!-- Bootstrap 5 JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
